@@ -3,7 +3,7 @@ c=3e8;%agar bisa pakai Hz
 f=300000;%frekuensi kerjadalam Hz
 lambda=c/f;%menentukan panjang gelombang
 eta=377;%impedansi ruang bebas
-I=1;%arus maksimum masuk antena
+I=1e5;%arus maksimum masuk antena
 l=lambda/2;%panjang antena. bisa berubah
 k=(2*pi)/lambda;%wavenuber
 theta=(0:0.01:2*pi);%sudut elevasi
@@ -42,4 +42,4 @@ y=r .*cos(theta) .*sin(r);
 z=r .*sin(theta);
 
 %plotting
-polarplot(abs(Eplane))
+polarplot(Rtheta)
