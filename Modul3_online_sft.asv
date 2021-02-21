@@ -14,14 +14,14 @@ Eplane=((1j*eta*I*exp(-1j*k.*r))/(4*pi.*r)).*cos(theta);
 %unfinished block for Eplane%
 
 %unfinished array factor%
-N=10;%jumlah array antena
-d=40;%jarak antar elemen array
-beta=pi/3;%fase eksitasi
-psi=k*d*cos(theta)+beta;
-AF=(1/N)*((sin((N/2)*psi))./sin((1/2)*psi));
+N=32;%jumlah array antena
+d=1;%jarak antar elemen array
+beta=;%fase eksitasi pakai radian?
+psi=k*d.*cos(theta)+beta;
+AF=(1./N)*((sin((0.5.*N)*psi))./sin((1/2)*psi));
 %unfinished array factor%
 
-%ETotal radiasi kombinasi
+%ETotal radiasi kombinasi belum diconvert ke dB
 Etotal=Eplane.*AF;
 
 %Power pattern dan konversi magnitude ke dB
@@ -43,4 +43,4 @@ z=r .*sin(theta);
 
 %plotting
 %polarplot(Rtheta); ini sudah siap
-polarplot(10*log10(abs(AF)))
+polarplot(10*log10(abs(AF)))%tidak digabung konversinya ke dB dulu
