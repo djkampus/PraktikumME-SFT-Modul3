@@ -1,6 +1,6 @@
 %unfinished block for Eplane%
 c=3e8;%agar bisa pakai Hz
-f=300000;%frekuensi kerjadalam Hz
+f=300e6;%frekuensi kerjadalam Hz
 lambda=c/f;%menentukan panjang gelombang
 eta=377;%impedansi ruang bebas
 I=1e5;%arus maksimum masuk antena
@@ -15,9 +15,9 @@ Eplane=((1j*eta*I*exp(-1j*k.*r))/(4*pi.*r)).*cos(theta);
 %unfinished block for Eplane%
 
 %unfinished array factor%
-N=5;%jumlah array antena
-d=40;%jarak antar elemen array
-beta=pi/2;%fase eksitasi
+N=16;%jumlah array antena
+d=lambda/2;%jarak antar elemen array/spacingnya lambda/2
+beta=0;%fase eksitasi
 psi=k*d*cos(theta)+beta;
 AF=(1/N)*((sin((N/2)*psi))./sin((1/2)*psi));
 %unfinished array factor%
@@ -44,4 +44,4 @@ z=r .*sin(theta);
 
 %plotting
 %polarplot(Rtheta); ini sudah siap
-polarplot(10*log10(abs(AF)))%tidak digabung konversinya ke dB dulu
+polarplot(10*log10(abs(AF.*Eplane)))%tidak digabung konversinya ke dB dulu
