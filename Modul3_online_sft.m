@@ -16,13 +16,13 @@ Eplane=((1j*eta*I*exp(-1j*k.*r))/(4*pi.*r)).*cos(theta);
 %unfinished array factor%
 N=10;%jumlah array antena
 d=5;%jarak antar elemen array
-beta=0:0.01:2*pi;%fase eksitasi
+beta=0;%fase eksitasi
 psi=k*d*cos(theta)+beta;
-AF=(1/N)*((sin((N/2)*psi))/sin((1/2)*psi));
+AF=(1/N)*((sin((N/2)*psi))./sin((1/2)*psi));
 %unfinished array factor%
 
 %ETotal radiasi kombinasi
-Etotal=Eplane*AF;
+Etotal=Eplane.*AF;
 
 %Power pattern dan konversi magnitude ke dB
 rtheta=abs(Eplane);%bisa Eplane atau AF
@@ -42,4 +42,5 @@ y=r .*cos(theta) .*sin(r);
 z=r .*sin(theta);
 
 %plotting
-polarplot(Rtheta)
+%polarplot(Rtheta); ini sudah siap
+polarplot(10*log10(abs(AF)))
