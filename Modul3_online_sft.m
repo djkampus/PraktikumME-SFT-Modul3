@@ -7,7 +7,8 @@ I=1e5;%arus maksimum masuk antena
 l=lambda/2;%panjang antena. bisa berubah
 k=(2*pi)/lambda;%wavenuber
 theta=(0:0.01:2*pi);%sudut elevasi
-r=10*lambda;%radius spherical coordinate
+r=10*lambda;%radius spherical coordinate/ bisa dibilang magnitude.
+%sebentar magnitude disini faedahnya apa? 
 
 %rumus Eplane. bisa diganti sin ke cos
 Eplane=((1j*eta*I*exp(-1j*k.*r))/(4*pi.*r)).*cos(theta);
@@ -16,7 +17,7 @@ Eplane=((1j*eta*I*exp(-1j*k.*r))/(4*pi.*r)).*cos(theta);
 %unfinished array factor%
 N=5;%jumlah array antena
 d=40;%jarak antar elemen array
-beta=pi/3;%fase eksitasi
+beta=pi/2;%fase eksitasi
 psi=k*d*cos(theta)+beta;
 AF=(1/N)*((sin((N/2)*psi))./sin((1/2)*psi));
 %unfinished array factor%
@@ -43,4 +44,4 @@ z=r .*sin(theta);
 
 %plotting
 %polarplot(Rtheta); ini sudah siap
-polarplot(10*log10(abs(Etotal)))%tidak digabung konversinya ke dB dulu
+polarplot(10*log10(abs(AF)))%tidak digabung konversinya ke dB dulu
