@@ -43,4 +43,4 @@ z=r .*sin(theta);
 
 %plotting
 %polarplot(Rtheta); ini sudah siap
-polarplot(10*log10(abs(AF)))%tidak digabung konversinya ke dB dulu
+polarplot(10*log10(abs(Etotal)))%tidak digabung konversinya ke dB dulu
