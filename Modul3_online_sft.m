@@ -32,15 +32,23 @@ Rtheta=10*log10(rtheta);
 
 %Rnormalisasi
 Rnorm=Rtheta-min(Rtheta);
+%Rnorm perlu dinolkan di 1,1 sebelum plotting
+Rnorm(1,1)=0;
 %pembentukan matrix
 phi_matrix=[];
 for iterator=0:0.01:2*pi
     phi_matrix=[phi_matrix;0:0.01:2*pi];
 end
 theta_matrix=transpose(phi_matrix);
+%bentuk matriks Rnorm
+Rnorm_matrix=[];
+for i=1:629
+    for k=1:629
+        Rnorm_matrix(k,i)=Rnorm(1,k);
+    end
+end
 %pembentukan matrix
-%Rnorm perlu dinolkan di 1,1 sebelum plotting
-Rnorm(1,1)=0;
+
 
 %konversi sphere-coord to cartesian
 phi=(0:0.01:2*pi);
