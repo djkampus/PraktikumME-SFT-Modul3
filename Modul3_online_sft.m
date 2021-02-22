@@ -52,9 +52,9 @@ end
 
 %konversi sphere-coord to cartesian
 phi=(0:0.01:2*pi);
-x=Rnorm .*cos(theta) .*cos(phi);
-y=Rnorm .*cos(theta) .*sin(phi);
-z=Rnorm .*sin(theta);
+x=Rnorm_matrix .*cos(theta_matrix) .*cos(phi_matrix);
+y=Rnorm_matrix .*cos(theta_matrix) .*sin(phi_matrix);
+z=Rnorm .*sin(theta_matrix);
 
 %plotting
 %polarplot(Rtheta); ini sudah siap
