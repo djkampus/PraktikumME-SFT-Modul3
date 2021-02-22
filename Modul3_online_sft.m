@@ -61,5 +61,5 @@ z=Rnorm_matrix .*sin(theta_matrix);
 
 %plotting
 %polarplot(Rtheta); ini sudah siap
-polarplot(10*log10(abs(AF)));%tidak digabung konversinya ke dB dulu
-surf(x,y,z,sqrt(x.^2+y.^2+z.^2),'EdgeColor','none','FaceColor','interp');
+polarplot(10*log10(abs(Eplane.*AF)));%tidak digabung konversinya ke dB dulu
+%surf(x,y,z,sqrt(x.^2+y.^2+z.^2),'EdgeColor','none','FaceColor','interp');
