@@ -54,7 +54,7 @@ end
 phi=(0:0.01:2*pi);
 x=Rnorm_matrix .*cos(theta_matrix) .*cos(phi_matrix);
 y=Rnorm_matrix .*cos(theta_matrix) .*sin(phi_matrix);
-z=Rnorm .*sin(theta_matrix);
+z=Rnorm_matrix .*sin(theta_matrix);
 
 %plotting
 %polarplot(Rtheta); ini sudah siap
