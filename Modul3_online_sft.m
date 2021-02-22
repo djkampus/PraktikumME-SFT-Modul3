@@ -29,6 +29,8 @@ Etotal=Eplane.*AF;
 rtheta=abs(Eplane);%bisa Eplane atau AF
 Rtheta=10*log10(rtheta);
 
+%Rnormalisasi
+Rnorm=Rtheta-min(Rtheta);
 %pembentukan matrix
 phi_matrix=[];
 for iterator=0:0.01:2*pi
